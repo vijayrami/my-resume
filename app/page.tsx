@@ -1,18 +1,16 @@
 import Header from "./components/Header";
+import Hero from "./components/Hero";
+
 
 export default function Home() {
     return (
         <>
             <Header />
+            <Hero />
             <main style={{ maxWidth: '800px', margin: '0 auto', padding: '40px' }}>
                 <h1>Vijay Rami</h1>
 
-            <h2>Adobe Commerce / Magento Lead Developer</h2>
-
-            <p>
-                Certified Magento Developer with 12+ years of experience in
-                Adobe Commerce, Magento 2, PWA, React, GraphQL, and team leadership.
-            </p>
+            
 
             <h3>Skills</h3>
             <ul>
