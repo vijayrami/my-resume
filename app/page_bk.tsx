@@ -1,11 +1,7 @@
-import Header from "./components/Header";
-
 export default function Home() {
     return (
-        <>
-            <Header />
-            <main style={{ maxWidth: '800px', margin: '0 auto', padding: '40px' }}>
-                <h1>Vijay Rami</h1>
+        <main style={{ maxWidth: '800px', margin: '0 auto', padding: '40px' }}>
+            <h1>Vijay Rami</h1>
 
             <h2>Adobe Commerce / Magento Lead Developer</h2>
 
@@ -43,6 +39,5 @@ export default function Home() {
                 LinkedIn: linkedin.com/in/yourprofile
             </p>
         </main>
-        </>
     );
 }
