@@ -1,97 +1,14 @@
-const skillCategories = [
-    {
-        title: "Adobe Commerce",
-        icon: "🛒",
-        skills: [
-            "Adobe Commerce",
-            "Magento 2",
-            "Adobe Commerce Cloud",
-            "Magento Open Source",
-            "B2B Commerce",
-            "Shared Catalog",
-            "Purchase Order",
-            "Security Patching",
-            "Platform Upgrades",
-        ],
-    },
-    {
-        title: "Backend Development",
-        icon: "⚙",
-        skills: [
-            "PHP 8.x",
-            "GraphQL",
-            "REST APIs",
-            "MySQL",
-            "Redis",
-            "RabbitMQ",
-            "OpenSearch",
-            "Elasticsearch",
-            "API Mesh",
-            "Adobe App Builder",
-        ],
-    },
-    {
-        title: "Frontend",
-        icon: "💻",
-        skills: [
-            "React.js",
-            "PWA Studio",
-            "JavaScript",
-            "TypeScript",
-            "Knockout.js",
-            "HTML5",
-            "CSS3",
-            "AJAX",
-            "jQuery",
-        ],
-    },
-    {
-        title: "Cloud & DevOps",
-        icon: "☁",
-        skills: [
-            "AWS",
-            "Docker",
-            "Git",
-            "CI/CD",
-            "Fastly CDN",
-            "Jenkins",
-            "Linux",
-        ],
-    },
-    {
-        title: "Integrations",
-        icon: "🔗",
-        skills: [
-            "SAP",
-            "Constructor.io",
-            "Algolia",
-            "ERP Integration",
-            "Payment Gateway",
-            "Taxation",
-            "OMS",
-            "XML Feeds",
-        ],
-    },
-    {
-        title: "Leadership",
-        icon: "👨‍💼",
-        skills: [
-            "Solution Architecture",
-            "Technical Leadership",
-            "Agile",
-            "Code Reviews",
-            "Mentoring",
-            "Sprint Planning",
-            "Estimation",
-            "Stakeholder Management",
-        ],
-    },
-];
+import {
+    skillCategories,
+    skillStatistics,
+    SkillCategory,
+} from "../data/skills";
 
 export default function Skills() {
     return (
         <section
             id="skills"
+            aria-labelledby="skills-heading"
             style={{
                 maxWidth: "1200px",
                 margin: "100px auto",
@@ -105,6 +22,7 @@ export default function Skills() {
                 }}
             >
                 <h2
+                    id="skills-heading"
                     style={{
                         fontSize: "2.5rem",
                         marginBottom: "15px",
@@ -142,6 +60,7 @@ export default function Skills() {
                             borderRadius: "16px",
                             padding: "28px",
                             boxShadow: "0 6px 20px rgba(0,0,0,.06)",
+                            transition: "all .25s ease",
                         }}
                     >
                         <h3
@@ -189,53 +108,20 @@ export default function Skills() {
                     textAlign: "center",
                 }}
             >
-                <div
-                    style={{
-                        background: "#2563EB",
-                        color: "#fff",
-                        padding: "30px",
-                        borderRadius: "16px",
-                    }}
-                >
-                    <h2 style={{ margin: 0 }}>12+</h2>
-                    <p>Years Experience</p>
-                </div>
-
-                <div
-                    style={{
-                        background: "#059669",
-                        color: "#fff",
-                        padding: "30px",
-                        borderRadius: "16px",
-                    }}
-                >
-                    <h2 style={{ margin: 0 }}>4×</h2>
-                    <p>Adobe Certified</p>
-                </div>
-
-                <div
-                    style={{
-                        background: "#7C3AED",
-                        color: "#fff",
-                        padding: "30px",
-                        borderRadius: "16px",
-                    }}
-                >
-                    <h2 style={{ margin: 0 }}>40+</h2>
-                    <p>Enterprise Projects</p>
-                </div>
-
-                <div
-                    style={{
-                        background: "#EA580C",
-                        color: "#fff",
-                        padding: "30px",
-                        borderRadius: "16px",
-                    }}
-                >
-                    <h2 style={{ margin: 0 }}>6+</h2>
-                    <p>Years Leadership</p>
-                </div>
+                {skillStatistics.map((stat) => (
+                    <div
+                        key={stat.label}
+                        style={{
+                            background: stat.background,
+                            color: "#fff",
+                            padding: "30px",
+                            borderRadius: "16px",
+                        }}
+                    >
+                        <h2 style={{ margin: 0 }}>{stat.value}</h2>
+                        <p>{stat.label}</p>
+                    </div>
+                ))}
             </div>
         </section>
     );
