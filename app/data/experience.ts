@@ -1,6 +1,6 @@
 export const experiences = [
     {
-        company: "Litmus7",
+        company: "Unknown Company",
         designation: "Senior Technology Specialist",
         period: "2025 - Present",
         location: "Ahmedabad, India",
@@ -17,7 +17,6 @@ export const experiences = [
             "Improved platform performance",
         ],
     },
-
     {
         company: "VT Netzwelt",
         designation: "Technical Lead",
