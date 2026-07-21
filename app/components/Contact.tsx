@@ -1,3 +1,5 @@
+import { profile } from "../data/profile";
+
 export default function Contact() {
     return (
         <section
@@ -13,7 +15,7 @@ export default function Contact() {
                     background: "linear-gradient(135deg,#2563EB,#1E40AF)",
                     borderRadius: "24px",
                     padding: "60px 40px",
-                    color: "#fff",
+                    color: "#FFFFFF",
                     textAlign: "center",
                 }}
             >
@@ -35,9 +37,7 @@ export default function Contact() {
                         opacity: 0.95,
                     }}
                 >
-                    I'm always interested in discussing Adobe Commerce
-                    architecture, enterprise eCommerce solutions, technical
-                    leadership opportunities, and challenging projects.
+                    {profile.contactMessage}
                 </p>
 
                 <div
@@ -68,13 +68,13 @@ export default function Contact() {
                         <h3>Email</h3>
 
                         <a
-                            href="mailto:YOUR_EMAIL"
+                            href={`mailto:${profile.email}`}
                             style={{
-                                color: "#fff",
+                                color: "#FFFFFF",
                                 textDecoration: "none",
                             }}
                         >
-                            YOUR_EMAIL
+                            {profile.email}
                         </a>
                     </div>
 
@@ -97,13 +97,13 @@ export default function Contact() {
                         <h3>Phone</h3>
 
                         <a
-                            href="tel:YOUR_PHONE"
+                            href={`tel:${profile.phone.replace(/\s+/g, "")}`}
                             style={{
-                                color: "#fff",
+                                color: "#FFFFFF",
                                 textDecoration: "none",
                             }}
                         >
-                            YOUR_PHONE
+                            {profile.phone}
                         </a>
                     </div>
 
@@ -125,7 +125,7 @@ export default function Contact() {
 
                         <h3>Location</h3>
 
-                        <p>Ahmedabad, Gujarat, India</p>
+                        <p>{profile.location}</p>
                     </div>
                 </div>
 
@@ -138,13 +138,13 @@ export default function Contact() {
                     }}
                 >
                     <a
-                        href="https://github.com/YOUR_GITHUB"
+                        href={profile.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
                             padding: "14px 26px",
                             background: "#111827",
-                            color: "#fff",
+                            color: "#FFFFFF",
                             textDecoration: "none",
                             borderRadius: "10px",
                             fontWeight: 600,
@@ -155,12 +155,12 @@ export default function Contact() {
                     </a>
 
                     <a
-                        href="https://linkedin.com/in/YOUR_LINKEDIN"
+                        href={profile.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
                             padding: "14px 26px",
-                            background: "#fff",
+                            background: "#FFFFFF",
                             color: "#2563EB",
                             textDecoration: "none",
                             borderRadius: "10px",
@@ -172,12 +172,13 @@ export default function Contact() {
                     </a>
 
                     <a
-                        href="/Vijay_Rami_Resume.pdf"
+                        href={profile.resume}
                         target="_blank"
+                        rel="noopener noreferrer"
                         style={{
                             padding: "14px 26px",
                             background: "#059669",
-                            color: "#fff",
+                            color: "#FFFFFF",
                             textDecoration: "none",
                             borderRadius: "10px",
                             fontWeight: 600,

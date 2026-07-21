@@ -1,9 +1,11 @@
+import { profile } from "../data/profile";
+
 export default function Header() {
     return (
         <header
             style={{
                 background: "#111827",
-                color: "#fff",
+                color: "#FFFFFF",
                 padding: "60px 20px",
                 textAlign: "center",
             }}
@@ -21,7 +23,7 @@ export default function Header() {
                         fontWeight: "bold",
                     }}
                 >
-                    Vijay M. Rami
+                    {profile.name}
                 </h1>
 
                 <h2
@@ -31,8 +33,9 @@ export default function Header() {
                         marginBottom: "25px",
                     }}
                 >
-                    Adobe Commerce Technical Lead • Solution Architect • GraphQL &
-                    Commerce Cloud Expert
+                    {profile.title}
+                    {profile.specialties.length > 0 &&
+                        ` • ${profile.specialties.join(" • ")}`}
                 </h2>
 
                 <div
@@ -51,7 +54,7 @@ export default function Header() {
                             borderRadius: "20px",
                         }}
                     >
-                        12+ Years Experience
+                        {profile.experience} Years Experience
                     </span>
 
                     <span
@@ -61,28 +64,21 @@ export default function Header() {
                             borderRadius: "20px",
                         }}
                     >
-                        4× Adobe Certified
+                        {profile.certifications} Adobe Certified
                     </span>
 
-                    <span
-                        style={{
-                            background: "#7C3AED",
-                            padding: "8px 14px",
-                            borderRadius: "20px",
-                        }}
-                    >
-                        Adobe Commerce Cloud
-                    </span>
-
-                    <span
-                        style={{
-                            background: "#EA580C",
-                            padding: "8px 14px",
-                            borderRadius: "20px",
-                        }}
-                    >
-                        Magento Architect
-                    </span>
+                    {profile.badges.map((badge) => (
+                        <span
+                            key={badge.label}
+                            style={{
+                                background: badge.color,
+                                padding: "8px 14px",
+                                borderRadius: "20px",
+                            }}
+                        >
+                            {badge.label}
+                        </span>
+                    ))}
                 </div>
 
                 <p
@@ -93,11 +89,7 @@ export default function Header() {
                         color: "#D1D5DB",
                     }}
                 >
-                    Results-driven Adobe Commerce Technical Lead with 12+ years of
-                    experience delivering scalable enterprise eCommerce solutions,
-                    specializing in Adobe Commerce Cloud, GraphQL, PWA Studio,
-                    enterprise integrations, solution architecture, and technical
-                    leadership.
+                    {profile.summary}
                 </p>
 
                 <div
@@ -109,26 +101,26 @@ export default function Header() {
                         fontSize: "15px",
                     }}
                 >
-                    <span>📍 Ahmedabad, Gujarat, India</span>
+                    <span>📍 {profile.location}</span>
 
                     <a
-                        href="mailto:vijaymrami@gmail.com"
+                        href={`mailto:${profile.email}`}
                         style={{
                             color: "#93C5FD",
                             textDecoration: "none",
                         }}
                     >
-                        📧 vijaymrami@gmail.com
+                        📧 {profile.email}
                     </a>
 
                     <a
-                        href="tel:+919662782488"
+                        href={`tel:${profile.phone.replace(/\s+/g, "")}`}
                         style={{
                             color: "#93C5FD",
                             textDecoration: "none",
                         }}
                     >
-                        📞 +91 9662782488
+                        📞 {profile.phone}
                     </a>
                 </div>
 
@@ -142,47 +134,51 @@ export default function Header() {
                     }}
                 >
                     <a
-                        href="https://github.com/vijayrami"
+                        href={profile.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
                             background: "#2563EB",
-                            color: "#fff",
+                            color: "#FFFFFF",
                             padding: "12px 22px",
                             borderRadius: "8px",
                             textDecoration: "none",
                             fontWeight: 600,
+                            transition: "all .25s ease",
                         }}
                     >
                         GitHub
                     </a>
 
                     <a
-                        href="https://linkedin.com/in/vijay-rami"
+                        href={profile.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
                             background: "#0A66C2",
-                            color: "#fff",
+                            color: "#FFFFFF",
                             padding: "12px 22px",
                             borderRadius: "8px",
                             textDecoration: "none",
                             fontWeight: 600,
+                            transition: "all .25s ease",
                         }}
                     >
                         LinkedIn
                     </a>
 
                     <a
-                        href="/Vijay_Rami_Resume.pdf"
+                        href={profile.resume}
                         target="_blank"
+                        rel="noopener noreferrer"
                         style={{
                             background: "#16A34A",
-                            color: "#fff",
+                            color: "#FFFFFF",
                             padding: "12px 22px",
                             borderRadius: "8px",
                             textDecoration: "none",
                             fontWeight: 600,
+                            transition: "all .25s ease",
                         }}
                     >
                         Download Resume
