@@ -6,7 +6,7 @@ export default function Contact() {
             id="contact"
             style={{
                 maxWidth: "1100px",
-                margin: "100px auto",
+                margin: "60px auto",
                 padding: "0 20px",
             }}
         >

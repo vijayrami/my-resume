@@ -4,7 +4,7 @@ export default function Education() {
             id="education"
             style={{
                 maxWidth: "1200px",
-                margin: "100px auto",
+                margin: "60px auto",
                 padding: "0 20px",
             }}
         >
