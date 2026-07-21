@@ -47,26 +47,6 @@ export default function Header() {
                         marginBottom: "30px",
                     }}
                 >
-                    <span
-                        style={{
-                            background: "#2563EB",
-                            padding: "8px 14px",
-                            borderRadius: "20px",
-                        }}
-                    >
-                        {profile.experience} Years Experience
-                    </span>
-
-                    <span
-                        style={{
-                            background: "#059669",
-                            padding: "8px 14px",
-                            borderRadius: "20px",
-                        }}
-                    >
-                        {profile.certifications} Adobe Certified
-                    </span>
-
                     {profile.badges.map((badge) => (
                         <span
                             key={badge.label}
