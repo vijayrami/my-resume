@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import TechStack from "./components/TechStack";
 import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
@@ -17,6 +18,7 @@ export default function Home() {
             <Hero />
             <FadeInSection><About /></FadeInSection>
             <FadeInSection><Skills /></FadeInSection>
+            <FadeInSection><TechStack /></FadeInSection>
             <FadeInSection><Experience /></FadeInSection>
             <FadeInSection><Certifications /></FadeInSection>
             <FadeInSection><Projects /></FadeInSection>

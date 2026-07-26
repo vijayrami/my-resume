@@ -96,7 +96,7 @@ export const skillCategories: SkillCategory[] = [
 
 export const skillStatistics = [
     {
-        value: "12+",
+        value: "14+",
         label: "Years Experience",
         background: "#2563EB",
     },
