@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 export default function Header() {
@@ -10,14 +12,18 @@ export default function Header() {
         { label: "Education", href: "#education" },
         { label: "Contact", href: "#contact" },
     ];
+
+    const scrollToTop = (e: React.MouseEvent) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     return (
         <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-sm">
             <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4 text-white">
-                <span className="font-bold text-lg">
-                    <Link href="/" className="font-bold text-lg">
-                        Vijay Rami
-                    </Link>
-                </span>
+                <Link href="/" onClick={scrollToTop} className="font-bold text-lg">
+                    Vijay Rami
+                </Link>
                 <ul className="flex gap-6">
                     {navItems.map((item) => (
                         <li key={item.href}>
