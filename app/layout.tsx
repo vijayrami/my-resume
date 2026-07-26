@@ -13,21 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vijay Rami | Magento & Adobe Commerce Developer",
+  title: "Vijay Rami | Senior Magento & Adobe Commerce Developer",
   description: "Senior Technology Specialist specializing in Magento/Adobe Commerce development, architecture, and consulting.",
   keywords: ["Magento Developer", "Adobe Commerce", "PHP Developer", "Vijay Rami"],
   authors: [{ name: "Vijay Rami" }],
   openGraph: {
-    title: "Vijay Rami | Portfolio",
-    description: "Senior Magento/Adobe Commerce Developer",
+    title: "Vijay Rami | Adobe Certified Professional, Expert, Master - Adobe Commerce Architect",
+    description: "Senior Magento/Adobe Commerce Developer | Solution Architecture | Technical Lead",
     url: "https://vijay-rami.vercel.app/",
     siteName: "Vijay Rami Portfolio",
     images: ["/preview.png"],
     type: "website",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
