@@ -2,7 +2,7 @@ import { profile } from "../data/profile";
 
 export default function Hero() {
     const highlights = [
-        "12+ Years Experience",
+        "14+ Years Experience",
         "4× Adobe Certified",
         "Adobe Commerce Architect",
         "Commerce Cloud Expert",
@@ -211,7 +211,7 @@ export default function Hero() {
                                     margin: 0,
                                 }}
                             >
-                                12+
+                                14+
                             </h2>
                             <small>Years Experience</small>
                         </div>

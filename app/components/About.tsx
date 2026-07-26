@@ -137,7 +137,7 @@ export default function About() {
                                     Experience
                                 </td>
 
-                                <td>12+ Years</td>
+                                <td>14+ Years</td>
                             </tr>
 
                             <tr>
@@ -176,7 +176,7 @@ export default function About() {
                                     Certifications
                                 </td>
 
-                                <td>4 Adobe</td>
+                                <td>4+ Adobe Certifications</td>
                             </tr>
 
                             <tr>
@@ -215,7 +215,7 @@ export default function About() {
                                     Open To
                                 </td>
 
-                                <td>Remote • Hybrid • Relocation</td>
+                                <td>Remote • Hybrid • Ready to Relocate</td>
                             </tr>
                         </tbody>
                     </table>

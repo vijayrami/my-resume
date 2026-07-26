@@ -1,3 +1,4 @@
+import FadeInSection from "./components/FadeInSection";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -14,13 +15,13 @@ export default function Home() {
         <>
             <Header />
             <Hero />
-            <About />
-            <Skills />
-            <Experience />
-            <Certifications />
-            <Projects />
-            <Education />
-            <Contact />
+            <FadeInSection><About /></FadeInSection>
+            <FadeInSection><Skills /></FadeInSection>
+            <FadeInSection><Experience /></FadeInSection>
+            <FadeInSection><Certifications /></FadeInSection>
+            <FadeInSection><Projects /></FadeInSection>
+            <FadeInSection><Education /></FadeInSection>
+            <FadeInSection><Contact /></FadeInSection>
             <Footer />
         </>
     );
