@@ -6,7 +6,6 @@ export default function Footer() {
     return (
         <footer
             style={{
-                marginTop: "60px",
                 background: "#111827",
                 color: "#FFFFFF",
             }}
@@ -15,34 +14,35 @@ export default function Footer() {
                 style={{
                     maxWidth: "1200px",
                     margin: "0 auto",
-                    padding: "70px 20px 35px",
+                    padding: "60px 20px 30px",
                 }}
             >
                 <div
                     style={{
                         display: "grid",
-                        gridTemplateColumns:
-                            "repeat(auto-fit, minmax(280px,1fr))",
-                        gap: "50px",
-                        marginBottom: "50px",
+                        gridTemplateColumns: "repeat(auto-fit, minmax(280px,1fr))",
+                        gap: "45px",
+                        marginBottom: "45px",
                     }}
                 >
                     {/* Brand */}
-
                     <div>
-                        <h2
+                        <h3
                             style={{
                                 marginTop: 0,
-                                marginBottom: "18px",
+                                marginBottom: "16px",
+                                fontSize: "20px",
+                                fontWeight: 700,
                             }}
                         >
                             {profile.name}
-                        </h2>
+                        </h3>
 
                         <p
                             style={{
                                 color: "#D1D5DB",
                                 lineHeight: 1.8,
+                                fontSize: "14.5px",
                             }}
                         >
                             {profile.summary}
@@ -50,140 +50,73 @@ export default function Footer() {
                     </div>
 
                     {/* Navigation */}
-
                     <div>
-                        <h3
+                        <h4
                             style={{
                                 marginTop: 0,
-                                marginBottom: "18px",
+                                marginBottom: "16px",
+                                fontSize: "16px",
+                                fontWeight: 700,
                             }}
                         >
                             Quick Links
-                        </h3>
+                        </h4>
 
-                        <div
-                            style={{
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: "12px",
-                            }}
-                        >
-                            <a
-                                href="#about"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                About
-                            </a>
-
-                            <a
-                                href="#skills"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                Skills
-                            </a>
-
-                            <a
-                                href="#experience"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                Experience
-                            </a>
-
-                            <a
-                                href="#projects"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                Projects
-                            </a>
-
-                            <a
-                                href="#certifications"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                Certifications
-                            </a>
-
-                            <a
-                                href="#contact"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
-                                Contact
-                            </a>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "11px" }}>
+                            {[
+                                { label: "About", href: "#about" },
+                                { label: "Skills", href: "#skills" },
+                                { label: "Experience", href: "#experience" },
+                                { label: "Projects", href: "#projects" },
+                                { label: "Certifications", href: "#certifications" },
+                                { label: "Contact", href: "#contact" },
+                            ].map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    style={{
+                                        color: "#D1D5DB",
+                                        textDecoration: "none",
+                                        fontSize: "14.5px",
+                                    }}
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
                         </div>
                     </div>
 
                     {/* Contact */}
-
                     <div>
-                        <h3
+                        <h4
                             style={{
                                 marginTop: 0,
-                                marginBottom: "18px",
+                                marginBottom: "16px",
+                                fontSize: "16px",
+                                fontWeight: 700,
                             }}
                         >
                             Connect
-                        </h3>
+                        </h4>
 
                         <div
                             style={{
                                 display: "flex",
                                 flexDirection: "column",
-                                gap: "14px",
+                                gap: "13px",
                                 color: "#D1D5DB",
+                                fontSize: "14.5px",
                             }}
                         >
-                            <a
-                                href={`mailto:${profile.email}`}
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
+                            <a href={`mailto:${profile.email}`} style={{ color: "#D1D5DB", textDecoration: "none" }}>
                                 📧 {profile.email}
                             </a>
-
-                            <a
-                                href={profile.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
+                            <a href={profile.github} target="_blank" rel="noopener noreferrer" style={{ color: "#D1D5DB", textDecoration: "none" }}>
                                 💻 GitHub
                             </a>
-
-                            <a
-                                href={profile.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    color: "#D1D5DB",
-                                    textDecoration: "none",
-                                }}
-                            >
+                            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "#D1D5DB", textDecoration: "none" }}>
                                 💼 LinkedIn
                             </a>
-
                             <span>📍 {profile.location}</span>
                         </div>
                     </div>
@@ -192,27 +125,18 @@ export default function Footer() {
                 <div
                     style={{
                         borderTop: "1px solid #374151",
-                        paddingTop: "30px",
+                        paddingTop: "26px",
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
                         flexWrap: "wrap",
-                        gap: "15px",
+                        gap: "12px",
                     }}
                 >
-                    <div
-                        style={{
-                            color: "#9CA3AF",
-                        }}
-                    >
+                    <div style={{ color: "#9CA3AF", fontSize: "13.5px" }}>
                         © {currentYear} Vijay M. Rami. All Rights Reserved.
                     </div>
-
-                    <div
-                        style={{
-                            color: "#9CA3AF",
-                        }}
-                    >
+                    <div style={{ color: "#9CA3AF", fontSize: "13.5px" }}>
                         Built with Next.js • TypeScript • React
                     </div>
                 </div>
