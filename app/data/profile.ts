@@ -2,7 +2,7 @@ export const profile = {
     name: "Vijay M. Rami",
     title: "Adobe Commerce Technical Lead",
     summary:
-    "Adobe Commerce Technical Lead with 12+ years of experience building scalable enterprise eCommerce solutions using Adobe Commerce Cloud, GraphQL, React, PWA Studio and modern cloud technologies.",
+    "Adobe Commerce Technical Lead with 14+ years of experience building scalable enterprise eCommerce solutions using Adobe Commerce Cloud, GraphQL, React, PWA Studio and modern cloud technologies.",
     contactMessage:
     "I'm always interested in discussing Adobe Commerce architecture, enterprise eCommerce solutions, technical leadership opportunities, and challenging projects.",
     specialties: [
