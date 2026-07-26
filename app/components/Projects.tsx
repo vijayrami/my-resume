@@ -5,148 +5,168 @@ export default function Projects() {
         <section
             id="projects"
             style={{
-                maxWidth: "1200px",
-                margin: "60px auto",
-                padding: "0 20px",
+                background: "#F3FDF9",
+                padding: "80px 0",
             }}
         >
             <div
                 style={{
-                    textAlign: "center",
-                    marginBottom: "60px",
+                    maxWidth: "1200px",
+                    margin: "0 auto",
+                    padding: "0 20px",
                 }}
             >
-                <h2
+                <div
                     style={{
-                        fontSize: "2.5rem",
-                        marginBottom: "15px",
+                        textAlign: "center",
+                        marginBottom: "60px",
                     }}
                 >
-                    Featured Enterprise Projects
-                </h2>
-
-                <p
-                    style={{
-                        maxWidth: "800px",
-                        margin: "0 auto",
-                        color: "#6B7280",
-                        lineHeight: 1.8,
-                        fontSize: "18px",
-                    }}
-                >
-                    Enterprise Adobe Commerce implementations where I've led
-                    architecture, development and technical delivery for global
-                    brands.
-                </p>
-            </div>
-
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "35px",
-                }}
-            >
-                {projects.map((project) => (
-                    <div
-                        key={project.company}
+                    <h2
                         style={{
-                            background: "#fff",
-                            borderRadius: "18px",
-                            padding: "35px",
-                            boxShadow: "0 6px 20px rgba(0,0,0,.06)",
-                            borderLeft: `6px solid ${project.color}`,
-                            transition: "all .25s ease",
+                            fontSize: "2.5rem",
+                            fontWeight: 700,
+                            marginBottom: "15px",
                         }}
                     >
+                        Featured Enterprise Projects
+                    </h2>
+
+                    <p
+                        style={{
+                            maxWidth: "800px",
+                            margin: "0 auto",
+                            color: "#6B7280",
+                            lineHeight: 1.8,
+                            fontSize: "17px",
+                        }}
+                    >
+                        Enterprise Adobe Commerce implementations where I've led
+                        architecture, development and technical delivery for global
+                        brands.
+                    </p>
+                </div>
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
+                    {projects.map((project) => (
                         <div
+                            key={project.company}
                             style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                flexWrap: "wrap",
-                                gap: "20px",
+                                background: "#FFFFFF",
+                                borderRadius: "18px",
+                                padding: "32px",
+                                boxShadow: "0 6px 20px rgba(0,0,0,.06)",
+                                borderLeft: `6px solid ${project.color}`,
+                                transition: "all .25s ease",
                             }}
                         >
-                            <div>
-                                <h2
-                                    style={{
-                                        marginBottom: "10px",
-                                    }}
-                                >
-                                    {project.icon} {project.company}
-                                </h2>
-
-                                <h4
-                                    style={{
-                                        color: project.color,
-                                        marginTop: 0,
-                                    }}
-                                >
-                                    {project.role}
-                                </h4>
-                            </div>
-
-                            <span
+                            <div
                                 style={{
-                                    background: "#F3F4F6",
-                                    padding: "8px 16px",
-                                    borderRadius: "20px",
-                                    height: "fit-content",
+                                    display: "flex",
+                                    justifyContent: "space-between",
+                                    flexWrap: "wrap",
+                                    gap: "20px",
                                 }}
                             >
-                                {project.duration}
-                            </span>
-                        </div>
+                                <div>
+                                    <h3
+                                        style={{
+                                            fontSize: "22px",
+                                            fontWeight: 700,
+                                            marginBottom: "8px",
+                                        }}
+                                    >
+                                        {project.icon} {project.company}
+                                    </h3>
 
-                        <p
-                            style={{
-                                color: "#4B5563",
-                                lineHeight: 1.8,
-                                marginTop: "20px",
-                            }}
-                        >
-                            {project.description}
-                        </p>
+                                    <h4
+                                        style={{
+                                            color: project.color,
+                                            fontSize: "15px",
+                                            fontWeight: 600,
+                                            margin: 0,
+                                        }}
+                                    >
+                                        {project.role}
+                                    </h4>
+                                </div>
 
-                        <h4>Key Contributions</h4>
-
-                        <ul
-                            style={{
-                                lineHeight: 2,
-                                color: "#374151",
-                            }}
-                        >
-                            {project.highlights.map((item) => (
-                                <li key={item}>{item}</li>
-                            ))}
-                        </ul>
-
-                        <div
-                            style={{
-                                display: "flex",
-                                flexWrap: "wrap",
-                                gap: "10px",
-                                marginTop: "25px",
-                            }}
-                        >
-                            {project.technologies.map((tech) => (
                                 <span
-                                    key={tech}
                                     style={{
-                                        background: "#EFF6FF",
-                                        color: "#2563EB",
-                                        padding: "8px 14px",
+                                        background: "#F3F4F6",
+                                        padding: "7px 15px",
                                         borderRadius: "20px",
-                                        fontSize: "14px",
+                                        height: "fit-content",
+                                        fontSize: "13.5px",
+                                        color: "#4B5563",
                                         fontWeight: 500,
                                     }}
                                 >
-                                    {tech}
+                                    {project.duration}
                                 </span>
-                            ))}
+                            </div>
+
+                            <p
+                                style={{
+                                    color: "#4B5563",
+                                    lineHeight: 1.8,
+                                    fontSize: "15px",
+                                    marginTop: "18px",
+                                }}
+                            >
+                                {project.description}
+                            </p>
+
+                            <h4
+                                style={{
+                                    fontSize: "15px",
+                                    fontWeight: 700,
+                                    marginBottom: "8px",
+                                }}
+                            >
+                                Key Contributions
+                            </h4>
+
+                            <ul
+                                style={{
+                                    lineHeight: 1.9,
+                                    color: "#374151",
+                                    fontSize: "14.5px",
+                                    paddingLeft: "20px",
+                                }}
+                            >
+                                {project.highlights.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
+
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    gap: "10px",
+                                    marginTop: "20px",
+                                }}
+                            >
+                                {project.technologies.map((tech) => (
+                                    <span
+                                        key={tech}
+                                        style={{
+                                            background: "#EFF6FF",
+                                            color: "#2563EB",
+                                            padding: "7px 13px",
+                                            borderRadius: "20px",
+                                            fontSize: "13.5px",
+                                            fontWeight: 500,
+                                        }}
+                                    >
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </section>
     );

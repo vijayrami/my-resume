@@ -4,7 +4,7 @@ import AnimatedCounter from "./AnimatedCounter";
 
 const stats = [
     { value: "40+", label: "Enterprise Projects Delivered" },
-    { value: "12+", label: "Years Experience" },
+    { value: "14+", label: "Years Experience" },
     { value: "4×", label: "Adobe Certifications" },
 ];
 
