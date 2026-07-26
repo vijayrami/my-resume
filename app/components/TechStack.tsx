@@ -10,11 +10,18 @@ import {
     SiDocker,
     SiJquery,
 } from "react-icons/si";
-import { FaShoppingCart } from "react-icons/fa";
+import Image from "next/image";
 
-const techStack = [
-    { name: "Magento", icon: FaShoppingCart, color: "#EE672F" }, // fallback icon
-    { name: "Adobe Commerce", icon: FaShoppingCart, color: "#FA0F00" }, // fallback icon
+interface TechItem {
+    name: string;
+    icon?: React.ComponentType<{ size?: number; color?: string }>;
+    image?: string;
+    color: string;
+}
+
+const techStack: TechItem[] = [
+    { name: "Magento", image: "/icons/magento.svg", color: "#EE672F" },
+    { name: "Adobe Commerce", image: "/icons/adobe-commerce.svg", color: "#FA0F00" },
     { name: "PHP", icon: SiPhp, color: "#777BB4" },
     { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
@@ -47,7 +54,7 @@ export default function TechStack() {
                     gap: "30px",
                 }}
             >
-                {techStack.map(({ name, icon: Icon, color }) => (
+                {techStack.map(({ name, icon: Icon, image, color }) => (
                     <div
                         key={name}
                         style={{
@@ -71,7 +78,11 @@ export default function TechStack() {
                             e.currentTarget.style.boxShadow = "0 4px 15px rgba(0,0,0,.06)";
                         }}
                     >
-                        <Icon size={42} color={color} />
+                        {image ? (
+                            <Image src={image} alt={name} width={42} height={42} />
+                        ) : Icon ? (
+                            <Icon size={42} color={color} />
+                        ) : null}
                         <span style={{ fontSize: "14px", fontWeight: 500 }}>
                             {name}
                         </span>

@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import TechStack from "./components/TechStack";
+import SoftwaresUsed from "./components/SoftwaresUsed";
 import Experience from "./components/Experience";
 import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
@@ -19,6 +20,7 @@ export default function Home() {
             <FadeInSection><About /></FadeInSection>
             <FadeInSection><Skills /></FadeInSection>
             <FadeInSection><TechStack /></FadeInSection>
+            <FadeInSection><SoftwaresUsed /></FadeInSection>
             <FadeInSection><Experience /></FadeInSection>
             <FadeInSection><Certifications /></FadeInSection>
             <FadeInSection><Projects /></FadeInSection>
