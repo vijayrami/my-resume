@@ -1,3 +1,5 @@
+import { profile } from "../data/profile";
+
 export default function Hero() {
     const highlights = [
         "12+ Years Experience",
@@ -103,6 +105,51 @@ export default function Hero() {
                             }}
                         >
                             Download Resume
+                        </a>
+                    </div>
+                    {/* Contact + Social Row */}
+                    <div
+                        style={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            gap: "18px",
+                            marginTop: "30px",
+                            fontSize: "15px",
+                            color: "#4B5563",
+                        }}
+                    >
+                        <span>📍 {profile.location}</span>
+                        <a
+                        
+                            href={`mailto:${profile.email}`}
+                            style={{ color: "#2563EB", textDecoration: "none" }}
+                        >
+                            📧 {profile.email}
+                        </a>
+
+                        <a
+                            href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+                            style={{ color: "#2563EB", textDecoration: "none" }}
+                        >
+                            📞 {profile.phone}
+                        </a>
+
+                        <a
+                            href={profile.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#2563EB", textDecoration: "none", fontWeight: 600 }}
+                        >
+                            GitHub
+                        </a>
+
+                        <a
+                            href={profile.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "#0A66C2", textDecoration: "none", fontWeight: 600 }}
+                        >
+                            LinkedIn
                         </a>
                     </div>
                 </div>
