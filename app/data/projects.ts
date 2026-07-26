@@ -108,21 +108,3 @@ export const projects: Project[] = [
         ],
     },
 ];
-
-export const projectStatistics = [
-    {
-        value: "40+",
-        label: "Enterprise Projects",
-        background: "#2563EB",
-    },
-    {
-        value: "12+",
-        label: "Years Experience",
-        background: "#059669",
-    },
-    {
-        value: "6+",
-        label: "Years Technical Leadership",
-        background: "#7C3AED",
-    },
-];

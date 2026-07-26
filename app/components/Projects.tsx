@@ -1,4 +1,4 @@
-import { projectStatistics, projects } from "../data/projects";
+import { projects } from "../data/projects";
 
 export default function Projects() {
     return (
@@ -145,32 +145,6 @@ export default function Projects() {
                                 </span>
                             ))}
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            <div
-                style={{
-                    marginTop: "70px",
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
-                    gap: "25px",
-                    textAlign: "center",
-                }}
-            >
-                {projectStatistics.map((stat) => (
-                    <div
-                        key={stat.label}
-                        style={{
-                            background: stat.background,
-                            color: "#fff",
-                            padding: "30px",
-                            borderRadius: "16px",
-                        }}
-                    >
-                        <h2 style={{ margin: 0 }}>{stat.value}</h2>
-
-                        <p>{stat.label}</p>
                     </div>
                 ))}
             </div>

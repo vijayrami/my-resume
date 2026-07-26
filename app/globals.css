@@ -28,3 +28,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.cert-flip-outer:hover .cert-flip-inner {
+    transform: rotateY(180deg);
+}

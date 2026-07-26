@@ -1,7 +1,5 @@
 import {
-    skillCategories,
-    skillStatistics,
-    SkillCategory,
+    skillCategories
 } from "../data/skills";
 
 export default function Skills() {
@@ -95,31 +93,6 @@ export default function Skills() {
                                 </span>
                             ))}
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            <div
-                style={{
-                    marginTop: "70px",
-                    display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
-                    gap: "25px",
-                    textAlign: "center",
-                }}
-            >
-                {skillStatistics.map((stat) => (
-                    <div
-                        key={stat.label}
-                        style={{
-                            background: stat.background,
-                            color: "#fff",
-                            padding: "30px",
-                            borderRadius: "16px",
-                        }}
-                    >
-                        <h2 style={{ margin: 0 }}>{stat.value}</h2>
-                        <p>{stat.label}</p>
                     </div>
                 ))}
             </div>
