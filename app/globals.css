@@ -32,3 +32,31 @@ html {
 .cert-flip-outer:hover .cert-flip-inner {
     transform: rotateY(180deg);
 }
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatBlob {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+.header-animated-bg {
+    background: linear-gradient(-45deg, #2563EB, #3B82F6, #1D4ED8, #60A5FA);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.35;
+    pointer-events: none;
+    animation: floatBlob 8s ease-in-out infinite;
+}
