@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
     const navItems = [
         { label: "About", href: "#about" },
@@ -11,7 +13,11 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-sm">
             <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4 text-white">
-                <span className="font-bold text-lg">Vijay Rami</span>
+                <span className="font-bold text-lg">
+                    <Link href="/" className="font-bold text-lg">
+                        Vijay Rami
+                    </Link>
+                </span>
                 <ul className="flex gap-6">
                     {navItems.map((item) => (
                         <li key={item.href}>

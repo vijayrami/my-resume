@@ -12,7 +12,7 @@ export const profile = {
     ],
     badges: [
     {
-        label: "12+ Years Experience",
+        label: "14+ Years Experience",
         color: "#2563EB",
     },
     {
@@ -37,7 +37,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/vijay-rami/",
 
     resume: "/Vijay_Rami_Resume.pdf",
-    experience: "12+",
+    experience: "14+",
     certifications: "4×",
     projects: "40+",
     leadership: "6+",
