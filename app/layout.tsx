@@ -15,7 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vijay Rami | Senior Magento & Adobe Commerce Developer",
+  metadataBase: new URL("https://vijay-rami.vercel.app"),
+  title: {
+      default: "Vijay Rami | Senior Magento & Adobe Commerce Developer",
+      template: "%s | Vijay M. Rami",
+  },
   description: "Senior Technology Specialist specializing in Magento/Adobe Commerce development, architecture, and consulting.",
   keywords: ["Magento Developer", "Adobe Commerce", "PHP Developer", "Vijay Rami"],
   authors: [{ name: "Vijay Rami" }],
@@ -25,7 +29,14 @@ export const metadata: Metadata = {
     url: "https://vijay-rami.vercel.app/",
     siteName: "Vijay Rami Portfolio",
     images: ["/preview.png"],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+      card: "summary_large_image",
+      title: "Vijay M. Rami",
+      description:
+          "Adobe Commerce Technical Lead | Solution Architect",
   },
   icons: {
     icon: [
