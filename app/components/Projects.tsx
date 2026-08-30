@@ -1,3 +1,5 @@
+"use client";
+
 import { projects } from "../data/projects";
 
 export default function Projects() {
@@ -47,25 +49,42 @@ export default function Projects() {
                     </p>
                 </div>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
+                <div
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                        gap: "28px",
+                    }}
+                >
                     {projects.map((project) => (
                         <div
                             key={project.company}
                             style={{
                                 background: "#FFFFFF",
-                                borderRadius: "18px",
-                                padding: "32px",
-                                boxShadow: "0 6px 20px rgba(0,0,0,.06)",
+                                borderRadius: "22px",
+                                padding: "28px 28px 24px",
+                                boxShadow: "0 14px 35px rgba(15, 23, 42, 0.08)",
+                                border: "1px solid rgba(148, 163, 184, 0.16)",
                                 borderLeft: `6px solid ${project.color}`,
                                 transition: "all .25s ease",
+                                transform: "translateY(0)",
+                            }}
+                            onMouseEnter={(event) => {
+                                event.currentTarget.style.transform = "translateY(-4px)";
+                                event.currentTarget.style.boxShadow = "0 18px 40px rgba(15, 23, 42, 0.12)";
+                            }}
+                            onMouseLeave={(event) => {
+                                event.currentTarget.style.transform = "translateY(0)";
+                                event.currentTarget.style.boxShadow = "0 14px 35px rgba(15, 23, 42, 0.08)";
                             }}
                         >
                             <div
                                 style={{
                                     display: "flex",
                                     justifyContent: "space-between",
+                                    alignItems: "flex-start",
                                     flexWrap: "wrap",
-                                    gap: "20px",
+                                    gap: "16px",
                                 }}
                             >
                                 <div>
@@ -74,6 +93,8 @@ export default function Projects() {
                                             fontSize: "22px",
                                             fontWeight: 700,
                                             marginBottom: "8px",
+                                            color: "#0F172A",
+                                            lineHeight: 1.2,
                                         }}
                                     >
                                         {project.icon} {project.company}
@@ -85,6 +106,7 @@ export default function Projects() {
                                             fontSize: "15px",
                                             fontWeight: 600,
                                             margin: 0,
+                                            letterSpacing: "0.01em",
                                         }}
                                     >
                                         {project.role}
@@ -93,13 +115,15 @@ export default function Projects() {
 
                                 <span
                                     style={{
-                                        background: "#F3F4F6",
-                                        padding: "7px 15px",
-                                        borderRadius: "20px",
+                                        background: "#F8FAFC",
+                                        padding: "7px 12px",
+                                        borderRadius: "999px",
                                         height: "fit-content",
-                                        fontSize: "13.5px",
-                                        color: "#4B5563",
-                                        fontWeight: 500,
+                                        fontSize: "12.5px",
+                                        color: "#475569",
+                                        fontWeight: 600,
+                                        border: "1px solid rgba(148, 163, 184, 0.18)",
+                                        letterSpacing: "0.02em",
                                     }}
                                 >
                                     {project.duration}
@@ -108,10 +132,11 @@ export default function Projects() {
 
                             <p
                                 style={{
-                                    color: "#4B5563",
+                                    color: "#475569",
                                     lineHeight: 1.8,
                                     fontSize: "15px",
                                     marginTop: "18px",
+                                    marginBottom: "18px",
                                 }}
                             >
                                 {project.description}
@@ -119,9 +144,12 @@ export default function Projects() {
 
                             <h4
                                 style={{
-                                    fontSize: "15px",
+                                    fontSize: "14px",
                                     fontWeight: 700,
-                                    marginBottom: "8px",
+                                    marginBottom: "10px",
+                                    color: "#0F172A",
+                                    letterSpacing: "0.02em",
+                                    textTransform: "uppercase",
                                 }}
                             >
                                 Key Contributions
@@ -133,6 +161,7 @@ export default function Projects() {
                                     color: "#374151",
                                     fontSize: "14.5px",
                                     paddingLeft: "20px",
+                                    margin: "0 0 20px",
                                 }}
                             >
                                 {project.highlights.map((item) => (
@@ -144,8 +173,7 @@ export default function Projects() {
                                 style={{
                                     display: "flex",
                                     flexWrap: "wrap",
-                                    gap: "10px",
-                                    marginTop: "20px",
+                                    gap: "8px",
                                 }}
                             >
                                 {project.technologies.map((tech) => (
@@ -154,10 +182,11 @@ export default function Projects() {
                                         style={{
                                             background: "#EFF6FF",
                                             color: "#2563EB",
-                                            padding: "7px 13px",
-                                            borderRadius: "20px",
-                                            fontSize: "13.5px",
-                                            fontWeight: 500,
+                                            padding: "6px 10px",
+                                            borderRadius: "999px",
+                                            fontSize: "12.5px",
+                                            fontWeight: 600,
+                                            border: "1px solid rgba(37, 99, 235, 0.08)",
                                         }}
                                     >
                                         {tech}

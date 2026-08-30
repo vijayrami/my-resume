@@ -2,6 +2,7 @@
 
 import { profile } from "../data/profile";
 import { motion } from "framer-motion";
+import { FaEnvelope, FaGithub, FaLinkedinIn, FaPhoneAlt } from "react-icons/fa";
 
 export default function Hero() {
     const highlights = [
@@ -11,6 +12,33 @@ export default function Hero() {
         "Commerce Cloud Expert",
         "GraphQL Specialist",
         "Team Lead",
+    ];
+
+    const contactLinks = [
+        {
+            href: `mailto:${profile.email}`,
+            label: "Email",
+            Icon: FaEnvelope,
+            external: false,
+        },
+        {
+            href: `tel:${profile.phone.replace(/\s+/g, "")}`,
+            label: "Phone",
+            Icon: FaPhoneAlt,
+            external: false,
+        },
+        {
+            href: profile.github,
+            label: "GitHub",
+            Icon: FaGithub,
+            external: true,
+        },
+        {
+            href: profile.linkedin,
+            label: "LinkedIn",
+            Icon: FaLinkedinIn,
+            external: true,
+        },
     ];
 
     return (
@@ -115,49 +143,84 @@ export default function Hero() {
                         </a>
                     </div>
 
-                    {/* Contact + Social Row */}
                     <div
                         style={{
                             display: "flex",
+                            alignItems: "center",
                             flexWrap: "wrap",
-                            gap: "18px",
+                            gap: "9px",
                             fontSize: "15px",
                             color: "#E5E7EB",
+                            marginTop: "4px",
+                            lineHeight: 1,
+                            paddingTop: "0",
+                            transform: "translateY(1px)",
                         }}
                     >
-                        <span>📍 {profile.location}</span>
-
-                        <a
-                            href={`mailto:${profile.email}`}
-                            style={{ color: "#FFFFFF", textDecoration: "none" }}
+                        <span
+                            style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "6px",
+                                padding: "6px 10px",
+                                borderRadius: "999px",
+                                background: "rgba(255,255,255,0.012)",
+                                border: "1px solid rgba(255,255,255,0.04)",
+                                color: "#DCE7F8",
+                                fontWeight: 300,
+                                fontSize: "12.4px",
+                                letterSpacing: "0.01em",
+                                boxShadow: "none",
+                                maxWidth: "fit-content",
+                            }}
                         >
-                            📧 {profile.email}
-                        </a>
+                            <span aria-hidden="true" style={{ fontSize: "10px", opacity: 0.72 }}>📍</span>
+                            {profile.location}
+                        </span>
 
-                        <a
-                            href={`tel:${profile.phone.replace(/\s+/g, "")}`}
-                            style={{ color: "#FFFFFF", textDecoration: "none" }}
-                        >
-                            📞 {profile.phone}
-                        </a>
-
-                        <a
-                            href={profile.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "#FFFFFF", textDecoration: "none", fontWeight: 600 }}
-                        >
-                            GitHub
-                        </a>
-
-                        <a
-                            href={profile.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{ color: "#93C5FD", textDecoration: "none", fontWeight: 600 }}
-                        >
-                            LinkedIn
-                        </a>
+                        {contactLinks.map(({ href, label, Icon, external }) => (
+                            <a
+                                key={label}
+                                href={href}
+                                target={external ? "_blank" : undefined}
+                                rel={external ? "noopener noreferrer" : undefined}
+                                aria-label={label}
+                                title={label}
+                                style={{
+                                    width: "32px",
+                                    height: "32px",
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    borderRadius: "50%",
+                                    background: "rgba(255,255,255,0.01)",
+                                    border: "1px solid rgba(255,255,255,0.06)",
+                                    color: "rgba(248,250,252,0.72)",
+                                    textDecoration: "none",
+                                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.03)",
+                                    transition: "all 0.2s ease",
+                                    opacity: 0.72,
+                                }}
+                                onMouseEnter={(event) => {
+                                    event.currentTarget.style.transform = "translateY(-1px) scale(1.04)";
+                                    event.currentTarget.style.background = "rgba(255,255,255,0.045)";
+                                    event.currentTarget.style.borderColor = "rgba(255,255,255,0.18)";
+                                    event.currentTarget.style.boxShadow = "0 0 0 1px rgba(255,255,255,0.04), 0 0 18px rgba(255,255,255,0.22)";
+                                    event.currentTarget.style.opacity = "1";
+                                    event.currentTarget.style.color = "#FFFFFF";
+                                }}
+                                onMouseLeave={(event) => {
+                                    event.currentTarget.style.transform = "translateY(0) scale(1)";
+                                    event.currentTarget.style.background = "rgba(255,255,255,0.01)";
+                                    event.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
+                                    event.currentTarget.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.03)";
+                                    event.currentTarget.style.opacity = "0.72";
+                                    event.currentTarget.style.color = "rgba(248,250,252,0.72)";
+                                }}
+                            >
+                                <Icon size={12} />
+                            </a>
+                        ))}
                     </div>
                 </div>
 
