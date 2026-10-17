@@ -4,16 +4,19 @@ import {
     useEffect,
     useRef,
     useState,
+    type CSSProperties,
     type ReactNode,
 } from 'react';
 
 interface FadeInSectionProps {
     children: ReactNode;
+    delay?: number;
     className?: string;
 }
 
 export default function FadeInSection({
     children,
+    delay = 0,
     className = '',
 }: FadeInSectionProps) {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -37,7 +40,12 @@ export default function FadeInSection({
     }, []);
 
     useEffect(() => {
-        // Mobile: render immediately without lazy loading.
+        // Wait until the viewport type has been determined.
+        if (isDesktop === null) {
+            return;
+        }
+
+        // Mobile/tablet: render immediately.
         if (!isDesktop) {
             setIsVisible(true);
 
@@ -70,14 +78,19 @@ export default function FadeInSection({
         };
     }, [isDesktop]);
 
+    const style: CSSProperties = {
+        transitionDelay: `${delay}s`,
+    };
+
     return (
         <div
             ref={sectionRef}
-            className={`${className} ${
+            className={`${className} transition-all duration-700 ease-out ${
                 isVisible
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-5'
-            } transition-all duration-700 ease-out`}
+                    ? 'translate-y-0 opacity-100'
+                    : 'translate-y-5 opacity-0'
+            }`}
+            style={style}
         >
             {children}
         </div>
