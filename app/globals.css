@@ -60,3 +60,138 @@ html {
     pointer-events: none;
     animation: floatBlob 8s ease-in-out infinite;
 }
+/* Mobile-first responsive improvements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: clip;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: anywhere;
+}
+
+/* Common responsive section spacing */
+@media (max-width: 767px) {
+    section[id] {
+        scroll-margin-top: 5rem;
+    }
+
+    section {
+        padding-top: 3.5rem !important;
+        padding-bottom: 3.5rem !important;
+    }
+
+    section h1,
+    section h2 {
+        font-size: clamp(1.65rem, 7vw, 2.1rem) !important;
+        line-height: 1.2;
+    }
+
+    section p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* Main section grids */
+    #about > div > div:nth-of-type(2),
+    #experience > div > div:nth-of-type(2),
+    #certifications > div:nth-of-type(2),
+    #projects > div > div:nth-of-type(2),
+    #education > div > div:nth-of-type(2) {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #about > div > div:nth-of-type(2) {
+        gap: 1.5rem !important;
+    }
+
+    /* Cards should fit narrow screens */
+    #about > div > div,
+    #experience > div,
+    #certifications > div,
+    #projects > div,
+    #education > div {
+        min-width: 0;
+    }
+
+    #about table {
+        font-size: 0.8rem !important;
+        table-layout: fixed;
+    }
+
+    #about td {
+        overflow-wrap: anywhere;
+        vertical-align: top;
+    }
+
+    #about td:first-child {
+        width: 38%;
+        padding-right: 0.75rem !important;
+    }
+
+    #projects > div > div:nth-of-type(2) > div,
+    #education > div > div:nth-of-type(2) > div {
+        padding: 1.25rem !important;
+    }
+
+    #certifications > div:nth-of-type(2) {
+        gap: 1rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+
+    /* Prevent long buttons and contact details overflowing */
+    #contact a {
+        overflow-wrap: anywhere;
+    }
+
+    .header-blob {
+        filter: blur(35px);
+        opacity: 0.2;
+    }
+}
+
+/* Tablet and smaller desktop */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #certifications > div:nth-of-type(2) {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    #experience > div > div:nth-of-type(2),
+    #projects > div > div:nth-of-type(2),
+    #education > div > div:nth-of-type(2) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

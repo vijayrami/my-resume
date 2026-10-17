@@ -46,18 +46,7 @@ export default function Hero() {
             <div className="header-blob" style={{ width: "300px", height: "300px", background: "#3B82F6", top: "-50px", left: "10%" }} />
             <div className="header-blob" style={{ width: "250px", height: "250px", background: "#8B5CF6", bottom: "-30px", right: "15%", animationDelay: "2s" }} />
 
-            <div
-                style={{
-                    position: "relative",
-                    zIndex: 1,
-                    maxWidth: "1200px",
-                    margin: "0 auto",
-                    display: "grid",
-                    gridTemplateColumns: "1.3fr 1fr",
-                    gap: "50px",
-                    alignItems: "center",
-                }}
-            >
+            <div className="relative z-10 mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-8 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
                 {/* Left Side */}
                 <div>
                     <span
@@ -74,14 +63,7 @@ export default function Hero() {
                         Available for Technical Lead & Solution Architect Roles
                     </span>
 
-                    <h2
-                        style={{
-                            fontSize: "3rem",
-                            marginBottom: "22px",
-                            lineHeight: 1.2,
-                            color: "#FFFFFF",
-                        }}
-                    >
+                    <h2 className="mb-6 text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
                         Building Enterprise
                         <br />
                         Adobe Commerce Solutions
