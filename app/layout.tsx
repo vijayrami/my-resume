@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   description: "Senior Technology Specialist specializing in Magento/Adobe Commerce development, architecture, and consulting.",
   keywords: ["Magento Developer", "Adobe Commerce", "PHP Developer", "Vijay Rami"],
   authors: [{ name: "Vijay Rami" }],
+  other: {
+    "google-adsense-account": process.env.ADSENSE_CLIENT ?? "",
+  },
   openGraph: {
     title: "Vijay Rami | Adobe Certified Professional, Expert, Master - Adobe Commerce Architect",
     description: "Senior Magento/Adobe Commerce Developer | Solution Architecture | Technical Lead",
@@ -65,12 +68,6 @@ export default function RootLayout({
 
         <Analytics />
         <SpeedInsights />
-        <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.ADSENSE_CLIENT}`}
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-        />
       </body>
     </html>
   );
