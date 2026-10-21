@@ -34,12 +34,15 @@ interface BloggerBlog {
     name?: string;
     description?: string;
     url?: string;
+    posts?: {
+        totalItems?: number;
+    };
 }
 
 interface BloggerPostsResponse {
     items?: BloggerPost[];
     nextPageToken?: string;
-    totalItems?: number;
+    prevPageToken?: string;
 }
 
 interface BloggerApiError {
@@ -167,10 +170,16 @@ export async function getPaginatedPosts(
     const normalizedPage = Math.max(1, page);
     const normalizedPageSize = Math.max(1, Math.min(pageSize, 100));
 
+    const blog = await getBlog();
+
     let pageToken: string | undefined;
     let response: BloggerPostsResponse = {};
 
-    for (let currentPage = 1; currentPage <= normalizedPage; currentPage++) {
+    for (
+        let currentPage = 1;
+        currentPage <= normalizedPage;
+        currentPage++
+    ) {
         response = await getPosts({
             maxResults: normalizedPageSize,
             pageToken,
@@ -187,7 +196,7 @@ export async function getPaginatedPosts(
         }
     }
 
-    const totalItems = response.totalItems ?? 0;
+    const totalItems = blog.posts?.totalItems ?? 0;
     const totalPages = Math.max(
         1,
         Math.ceil(totalItems / normalizedPageSize),
