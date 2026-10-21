@@ -1,3 +1,4 @@
+import { SITE_URL } from "./lib/site";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vijay-rami.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
       default: "Vijay Rami | Senior Magento & Adobe Commerce Developer",
       template: "%s | Vijay M. Rami",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Vijay Rami | Adobe Certified Professional, Expert, Master - Adobe Commerce Architect",
     description: "Senior Magento/Adobe Commerce Developer | Solution Architecture | Technical Lead",
-    url: "https://vijay-rami.vercel.app/",
+    url: SITE_URL,
     siteName: "Vijay Rami Portfolio",
     images: ["/preview.png"],
     locale: "en_US",

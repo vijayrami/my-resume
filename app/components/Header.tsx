@@ -20,6 +20,7 @@ export default function Header() {
         { label: "Certifications", href: "#certifications" },
         { label: "Projects", href: "#projects" },
         { label: "Education", href: "#education" },
+        { label: "Blog", href: "/blog" },
         { label: "Contact", href: "#contact" },
     ];
 
