@@ -86,9 +86,7 @@ export default async function BlogPage({
                         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                             {posts.map((post) => {
                                 const image = getPostImage(post);
-                                const excerpt = getPostExcerpt(
-                                    post.content,
-                                );
+                                const excerpt = getPostExcerpt(post.content);
                                 const slug = getPostSlug(post);
 
                                 return (

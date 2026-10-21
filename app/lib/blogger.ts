@@ -58,6 +58,7 @@ interface GetPostsOptions {
     label?: string;
     fetchBodies?: boolean;
     fetchImages?: boolean;
+    blogId?: string;
 }
 
 function getRequiredEnvironmentVariable(
@@ -139,9 +140,9 @@ export async function getPosts(
         BLOGGER_API_KEY,
     );
 
-    const blog = await getBlog();
+    const blogId = options.blogId ?? (await getBlog()).id;
 
-    const url = buildUrl(`blogs/${blog.id}/posts`, {
+    const url = buildUrl(`blogs/${blogId}/posts`, {
         key: apiKey,
         status: "live",
         orderBy: "published",
@@ -181,6 +182,7 @@ export async function getPaginatedPosts(
         currentPage++
     ) {
         response = await getPosts({
+            blogId: blog.id,
             maxResults: normalizedPageSize,
             pageToken,
         });
