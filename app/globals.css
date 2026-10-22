@@ -304,3 +304,17 @@ p {
 .blog-content th {
     font-weight: 600;
 }
+.syntaxhighlighter {
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    overflow-x: auto !important;
+}
+
+.syntaxhighlighter .container {
+    width: max-content;
+    min-width: 100%;
+}
+
+pre {
+    overflow-x: auto;
+}

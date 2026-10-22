@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITE_URL } from "../../lib/site";
 import sanitizeHtml from "sanitize-html";
+import SyntaxHighlighter from "../../components/SyntaxHighlighter";
 
 import Header from "../../components/Header";
 import {
@@ -96,7 +97,9 @@ function sanitizeBlogContent(content: string): string {
                 "class",
                 "colspan",
                 "data-*",
+                "name",
                 "rowspan",
+                "title",
             ],
         },
         allowedIframeHostnames: [
@@ -317,7 +320,7 @@ export default async function BlogPostPage({
                             />
                         </figure>
                     )}
-
+                    <SyntaxHighlighter />
                     <div
                         className="blog-content max-w-none text-base leading-7 text-gray-800"
                         dangerouslySetInnerHTML={{
